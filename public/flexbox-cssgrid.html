@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexBox-CSS Grid</title>
+    <style>
+        /*Se coloca unicamente a los contedenores a los ITEMS NO, solo el padre puede ser*/
+        .container {
+            display: flex; 
+            background-color: aqua;
+            justify-content: center;
+            /* align-items: center; */
+            height: 500px;
+            flex-direction: column;
+        }
+
+        .item {
+            width: 30px;
+            height: 30px;
+            background-color: green;
+        }
+
+        .container .item:nth-child(2n + 1){
+            background-color: aquamarine;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="https://css-tricks.com/">CSS Tricks</a>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+</body>
+</html>
