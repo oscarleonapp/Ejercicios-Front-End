@@ -62,26 +62,17 @@
             font-size: var(--lg);
 
             /*Posicionamiento*/
-            margin-bottom: 12px;
-            text-align: center;
-        }
-
-        .subtitle {
-            /*Visuales*/
-            color: var(--very-light-pink);
-
-            /*Tipografia*/
-            font-size: var(--md);
-            font-weight: 300;
-
-            /*Posicionamiento*/
-            margin-top: 0; /*Para que no se colapse con los margenes del otro elemento*/
-            margin-bottom: 32px;
-            text-align: center;
+            margin-bottom: 28px;
+            text-align: start;
         }
 
         .form {
             /*Box Model*/
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form div {
             display: flex;
             flex-direction: column;
         }
@@ -106,11 +97,17 @@
             padding: 6px;
 
             /*Tipografia*/
-            font-size: var(--md);
+            font-size: var(--sm);
 
             /*Posicionamiento*/
             margin-bottom: 8px;
             
+        }
+
+        .input-name,
+        .input-email,
+        .input-password {
+            margin-bottom: 18px;
         }
 
         .primary-button {
@@ -138,8 +135,14 @@
 
         /*Despues de esta medida*/
         @media (max-width: 640px){
-            .logo {
-                display: block;
+
+            .form-container {
+                height: 100%;
+            }
+
+            .form {
+                height: 100%;
+                justify-content: space-between;
             }
         }
         
@@ -148,20 +151,23 @@
 <body>
     <div class="login">
         <div class="form-container">
-            <img src="../source/logos/logo_yard_sale.svg" alt="logo" class="logo">
+            <h1 class="title">My account</h1>
 
-            <h1 class="title">Create a new password</h1>
-            <p class="subtitle">Enter a new password for your account</p>
             
             <form action="/" class="form">
-                <label for="password" class="label">Password</label>
-                <input type="password" name="" id="password" placeholder="******" class="input input-password">
-                
-                <label for="new-password" class="label">Password</label>
-                <input type="password" name="" id="new-password" placeholder="******" class="input input-password">
+                <div>
+                    <label for="name" class="label">Name</label>
+                    <input type="text" name="" id="name" placeholder="Oscar León" class="input input-name">
+    
+                    <label for="email" class="label">Email address</label>
+                    <input type="text" name="" id="email" placeholder="oscar@dirlatam.com" class="input input-email">
+    
+                    <label for="password" class="label">Password</label>
+                    <input type="password" name="" id="password" placeholder="******" class="input input-password">
+                </div>
 
                 <!--Value es para darle nombre al boton-->
-                <input type="submit" value="Confirm" class="primary-button login-button">
+                <input type="submit" value="Create" class="primary-button login-button">
             </form>
         </div>
     </div>
