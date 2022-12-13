@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
-    <title>New_password</title>
+    <title>My Account</title>
     <style>
         
         :root {
@@ -57,18 +57,24 @@
             display: none;
         }
 
+        .title {
+            /*Tipografia*/
+            font-size: var(--lg);
+
+            /*Posicionamiento*/
+            margin-bottom: 28px;
+            text-align: start;
+        }
+
         .form {
             /*Box Model*/
             display: flex;
             flex-direction: column;
         }
 
-        .form a {
-            color: var(--hospital-green);
-            font-size: var(--sm);
-            text-align: center;
-            text-decoration: none;
-            margin-bottom: 52px;
+        .form div {
+            display: flex;
+            flex-direction: column;
         }
 
         .label {
@@ -98,8 +104,10 @@
             
         }
 
-        .input-email {
-            margin-bottom: 22px;
+        .input-name,
+        .input-email,
+        .input-password {
+            margin-bottom: 18px;
         }
 
         .primary-button {
@@ -119,23 +127,6 @@
             font-weight: 500;
         }
 
-        .secondary-button {
-            /*Visuales*/
-            background-color: var(--white);
-            border-radius: 4px;
-            border: 1px solid var(--hospital-green);
-            color: var(--hospital-green);
-            cursor: pointer;
-
-            /*Box Model*/
-            width: 100%;
-            height: 32px;
-
-            /*Tipografia*/
-            font-size: var(--md);
-            font-weight: 500;
-        }
-
         .login-button {
             /*Posicionamiento*/
             margin-top: 12px;
@@ -144,13 +135,9 @@
 
         /*Despues de esta medida*/
         @media (max-width: 640px){
-            .logo {
-                display: block;
-            }
-
 
             .form-container {
-                height: 90%;
+                height: 95%;
             }
 
             .form {
@@ -164,24 +151,24 @@
 <body>
     <div class="login">
         <div class="form-container">
-            <img src="../source/logos/logo_yard_sale.svg" alt="logo" class="logo">
+            <h1 class="title">My account</h1>
+
             
             <form action="/" class="form">
                 <div>
+                    <label for="name" class="label">Name</label>
+                    <input type="text" name="" id="name" placeholder="Oscar León" class="input input-name">
+    
                     <label for="email" class="label">Email address</label>
                     <input type="text" name="" id="email" placeholder="oscar@dirlatam.com" class="input input-email">
-                    
+    
                     <label for="password" class="label">Password</label>
                     <input type="password" name="" id="password" placeholder="******" class="input input-password">
-
-                    
-                <!--Value es para darle nombre al boton-->
-                <input type="submit" value="Log in" class="primary-button login-button">
-                <a href="/">Forgot my password</a>
                 </div>
-            </form>
 
-            <button class="secondary-button signup-button">Sign up</button>
+                <!--Value es para darle nombre al boton-->
+                <input type="submit" value="Create" class="primary-button login-button">
+            </form>
         </div>
     </div>
 </body>
