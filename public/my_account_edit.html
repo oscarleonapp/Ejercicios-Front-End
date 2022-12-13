@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
-    <title>My Account</title>
+    <title>My Account Edit</title>
     <style>
         
         :root {
@@ -86,36 +86,17 @@
             margin-bottom: 4px; /*Separacion segun la guia de shopify*/
         }
 
-        .input {
-            /*Visuales*/
-            background-color: var(--text-input-field);
-            border: none;
-            border-radius: 4px; /*Regla de los multiplos de 4*/
-
-            /*Box Model*/
-            height: 18px;
-            padding: 6px;
-
-            /*Tipografia*/
-            font-size: var(--sm);
-
-            /*Posicionamiento*/
-            margin-bottom: 8px;
-            
+        .value {
+            color: var(--very-light-pink);
+            font-size: var(--md);
+            margin: 8px 0 32px 0; /*En el sentido de las manecillas del reloj*/
         }
-
-        .input-name,
-        .input-email,
-        .input-password {
-            margin-bottom: 18px;
-        }
-
-        .primary-button {
+        .secundary-button {
             /*Visuales*/
-            background-color: var(--hospital-green);
+            background-color: var(--white);
             border-radius: 4px;
-            border: none;
-            color: var(--white);
+            border: 1px solid var(--hospital-green);
+            color: var(--hospital-green);
             cursor: pointer;
 
             /*Box Model*/
@@ -157,17 +138,17 @@
             <form action="/" class="form">
                 <div>
                     <label for="name" class="label">Name</label>
-                    <input type="text" name="" id="name" placeholder="Oscar León" class="input input-name">
+                    <p class="value">Oscar León</p>
     
                     <label for="email" class="label">Email address</label>
-                    <input type="text" name="" id="email" placeholder="oscar@dirlatam.com" class="input input-email">
+                    <p class="value">oscar@dirlatam.com</p>
     
                     <label for="password" class="label">Password</label>
-                    <input type="password" name="" id="password" placeholder="******" class="input input-password">
+                    <p class="value">*********</p>
                 </div>
 
                 <!--Value es para darle nombre al boton-->
-                <input type="submit" value="Create" class="primary-button login-button">
+                <input type="submit" value="Edit" class="secundary-button edit-button">
             </form>
         </div>
     </div>
