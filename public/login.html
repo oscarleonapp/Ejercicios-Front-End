@@ -57,33 +57,18 @@
             display: none;
         }
 
-        .title {
-            /*Tipografia*/
-            font-size: var(--lg);
-
-            /*Posicionamiento*/
-            margin-bottom: 12px;
-            text-align: center;
-        }
-
-        .subtitle {
-            /*Visuales*/
-            color: var(--very-light-pink);
-
-            /*Tipografia*/
-            font-size: var(--md);
-            font-weight: 300;
-
-            /*Posicionamiento*/
-            margin-top: 0; /*Para que no se colapse con los margenes del otro elemento*/
-            margin-bottom: 32px;
-            text-align: center;
-        }
-
         .form {
             /*Box Model*/
             display: flex;
             flex-direction: column;
+        }
+
+        .form a {
+            color: var(--hospital-green);
+            font-size: var(--sm);
+            text-align: center;
+            text-decoration: none;
+            margin-bottom: 52px;
         }
 
         .label {
@@ -113,12 +98,33 @@
             
         }
 
+        .input-email {
+            margin-bottom: 22px;
+        }
+
         .primary-button {
             /*Visuales*/
             background-color: var(--hospital-green);
             border-radius: 4px;
             border: none;
             color: var(--white);
+            cursor: pointer;
+
+            /*Box Model*/
+            width: 100%;
+            height: 32px;
+
+            /*Tipografia*/
+            font-size: var(--md);
+            font-weight: 500;
+        }
+
+        .secondary-button {
+            /*Visuales*/
+            background-color: var(--white);
+            border-radius: 4px;
+            border: 1px solid var(--hospital-green);
+            color: var(--hospital-green);
             cursor: pointer;
 
             /*Box Model*/
@@ -141,6 +147,10 @@
             .logo {
                 display: block;
             }
+
+            .form a {
+            margin-bottom: 200px;
+        }
         }
         
     </style>
@@ -149,20 +159,20 @@
     <div class="login">
         <div class="form-container">
             <img src="../source/logos/logo_yard_sale.svg" alt="logo" class="logo">
-
-            <h1 class="title">Create a new password</h1>
-            <p class="subtitle">Enter a new password for your account</p>
             
             <form action="/" class="form">
+                <label for="email" class="label">Email address</label>
+                <input type="text" name="" id="email" placeholder="oscar@dirlatam.com" class="input input-email">
+                
                 <label for="password" class="label">Password</label>
                 <input type="password" name="" id="password" placeholder="******" class="input input-password">
-                
-                <label for="new-password" class="label">Password</label>
-                <input type="password" name="" id="new-password" placeholder="******" class="input input-password">
 
                 <!--Value es para darle nombre al boton-->
-                <input type="submit" value="Confirm" class="primary-button login-button">
+                <input type="submit" value="Log in" class="primary-button login-button">
+                <a href="/">Forgot my password</a>
             </form>
+
+            <button class="secondary-button signup-button">Sign up</button>
         </div>
     </div>
 </body>
