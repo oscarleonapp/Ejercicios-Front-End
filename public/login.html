@@ -148,9 +148,15 @@
                 display: block;
             }
 
-            .form a {
-            margin-bottom: 200px;
-        }
+
+            .form-container {
+                height: 90%;
+            }
+
+            .form {
+                height: 100%;
+                justify-content: space-between;
+            }
         }
         
     </style>
@@ -161,15 +167,18 @@
             <img src="../source/logos/logo_yard_sale.svg" alt="logo" class="logo">
             
             <form action="/" class="form">
-                <label for="email" class="label">Email address</label>
-                <input type="text" name="" id="email" placeholder="oscar@dirlatam.com" class="input input-email">
-                
-                <label for="password" class="label">Password</label>
-                <input type="password" name="" id="password" placeholder="******" class="input input-password">
+                <div>
+                    <label for="email" class="label">Email address</label>
+                    <input type="text" name="" id="email" placeholder="oscar@dirlatam.com" class="input input-email">
+                    
+                    <label for="password" class="label">Password</label>
+                    <input type="password" name="" id="password" placeholder="******" class="input input-password">
 
+                    
                 <!--Value es para darle nombre al boton-->
                 <input type="submit" value="Log in" class="primary-button login-button">
                 <a href="/">Forgot my password</a>
+                </div>
             </form>
 
             <button class="secondary-button signup-button">Sign up</button>
