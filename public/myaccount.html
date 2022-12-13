@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>My Account</title>
+    <style>
+        
+        :root {
+            --very-light-pink: #C7C7C7;
+            --text-input-field: #F7F7F7;
+            --hospital-green: #ACD9B2;
+            --white: #FFFFFF;
+            --black: #000000;
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .login {
+            /*Box Model*/
+            width: 100%;
+            height: 100vh;
+            
+            /*Posicionamiento*/
+            display: grid;
+            place-items: center; /*Centra todos los elemenmtos del contenedor*/
+        }
+
+        .form-container {
+            /*Box Model*/
+            width: 300px;
+
+            /*Posicionamiento*/
+            display: grid;
+            grid-template-rows: auto 1fr auto; /*Separa en filas y le da un espacio de una fracción automatica*/  
+        }
+
+        .logo {
+            /*Box Model*/
+            width: 150px;
+            
+            /*Posicionamiento*/
+            margin-bottom: 48px;
+            justify-self: center; /*Lo centra en la grid*/
+
+            /*Visuales*/
+            display: none;
+        }
+
+        .title {
+            /*Tipografia*/
+            font-size: var(--lg);
+
+            /*Posicionamiento*/
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .subtitle {
+            /*Visuales*/
+            color: var(--very-light-pink);
+
+            /*Tipografia*/
+            font-size: var(--md);
+            font-weight: 300;
+
+            /*Posicionamiento*/
+            margin-top: 0; /*Para que no se colapse con los margenes del otro elemento*/
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .form {
+            /*Box Model*/
+            display: flex;
+            flex-direction: column;
+        }
+
+        .label {
+            /*Tipografia*/
+            font-size: var(--sm);
+            font-weight: 500;
+
+            /*Posicionamiento*/
+            margin-bottom: 4px; /*Separacion segun la guia de shopify*/
+        }
+
+        .input {
+            /*Visuales*/
+            background-color: var(--text-input-field);
+            border: none;
+            border-radius: 4px; /*Regla de los multiplos de 4*/
+
+            /*Box Model*/
+            height: 18px;
+            padding: 6px;
+
+            /*Tipografia*/
+            font-size: var(--md);
+
+            /*Posicionamiento*/
+            margin-bottom: 8px;
+            
+        }
+
+        .primary-button {
+            /*Visuales*/
+            background-color: var(--hospital-green);
+            border-radius: 4px;
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+
+            /*Box Model*/
+            width: 100%;
+            height: 32px;
+
+            /*Tipografia*/
+            font-size: var(--md);
+            font-weight: 500;
+        }
+
+        .login-button {
+            /*Posicionamiento*/
+            margin-top: 12px;
+            margin-bottom: 26px;
+        }
+
+        /*Despues de esta medida*/
+        @media (max-width: 640px){
+            .logo {
+                display: block;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="login">
+        <div class="form-container">
+            <img src="../source/logos/logo_yard_sale.svg" alt="logo" class="logo">
+
+            <h1 class="title">Create a new password</h1>
+            <p class="subtitle">Enter a new password for your account</p>
+            
+            <form action="/" class="form">
+                <label for="password" class="label">Password</label>
+                <input type="password" name="" id="password" placeholder="******" class="input input-password">
+                
+                <label for="new-password" class="label">Password</label>
+                <input type="password" name="" id="new-password" placeholder="******" class="input input-password">
+
+                <!--Value es para darle nombre al boton-->
+                <input type="submit" value="Confirm" class="primary-button login-button">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
