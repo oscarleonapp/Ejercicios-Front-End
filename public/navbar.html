@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
-    <title>Nav</title>
+    <title>Detalles producto</title>
     <style>
         :root {
             --very-light-pink: #C7C7C7;
@@ -25,131 +25,124 @@
             font-family: 'Quicksand', sans-serif;
         }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            padding: 0 24px;
-            border-bottom: 1px solid var(--text-input-field);
+        .product-detail{
+            width: 360px;
+            padding: 24px;
+            position: absolute;
+            right: 0;
+
         }
 
-        .menu {
-            display: none;
+        .product-detail-close{
+            background-color: #F7F7F7;
+            position: absolute;
+           top: 24px;
+           left: 24px;
+            width: 12px;
+            height: 12px;
+            z-index: 2;
+            padding: 5px;
+            border-radius: 50%;
+           
         }
 
-        .logo {
-            width: 100px;
+        .product-detail-close:hover{
+            cursor: pointer;
         }
 
-        .navbar-left{
-            display: flex;
-            /* margin-left: 5px; */
+        .product-detail > img:nth-child(2){
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            border-radius:  0 0 20px 20px;
+
+        }
+
+        .product-info{
+            margin: 24px 24px 0 24px;
+        }
+
+        .product-info p:nth-child(1){
+            font-weight: bold;
+            font-size: var(--md);
+            margin-top: 0;
+            margin-bottom: 4px;
+        }
+
+        .product-info p:nth-child(2){
+            color: var(--very-light-pink);
+            font-size: var(--md);
+            margin-top: 0;
+            margin-bottom: 36px;
+        }
+
+        .product-info p:nth-child(3){
+            color: var(--very-light-pink);
+            font-size: var(--sm);
+            margin-top: 0;
+            margin-bottom: 36px;
         }
         
-        .navbar-left ul{
-            display: flex;
-            margin-left: 8px;
-        }
-        .navbar-left ul,
-        .navbar-rigth ul {
-           list-style: none;
-           padding: 0;
-           margin: 0;
-           display: flex;
-           align-items: center;
-           height: 60px;
-        }
-
-        .navbar-left ul a ,
-        .navbar-rigth ul a{
-            text-decoration: none;
-            color: var(--very-light-pink);
-            border: 1px solid var(--white);
-            padding: 8px;
-            border-radius: 8px;
-        }
-
-        .navbar-left ul a:hover ,
-        .navbar-rigth ul a:hover {
-            text-decoration: none;
-            color: var(--very-light-pink);
-            border: 1px solid var(--hospital-green);
-            color: var(--hospital-green);
-        }
-
-        .navbar-email {
-            color: var(--very-light-pink);
-            font-size: var(--sm);
-            margin-right: 12px;
-        }
-
-        .navbar-email img {
-            margin-left: 5px;
-            transform: rotate(90deg);
-        }
-
-        .navbar-shopping-cart {
-            position: relative;
-        }
-
-        .navbar-shopping-cart div {
-            width: 15px;
-            height: 15px;
+        .primary-button {
+            /*Visuales*/
             background-color: var(--hospital-green);
-            border-radius: 50%;
-            font-size: var(--sm);
-            font-weight: bold;
-            position: absolute;
-            top: -6px;
-            right: -3px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            border-radius: 4px;
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+
+            /*Box Model*/
+            width: 100%;
+            height: 32px;
+
+            /*Tipografia*/
+            font-size: var(--md);
+            font-weight: 500;
+        }
+
+        .add-to-cart-button{
+           display: flex;
+           align-items: center; 
+           justify-content: center;
         }
 
         @media (max-width: 640px){
-            .menu {
-                display: block;
+            .product-detail{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
             }
-
-            .navbar-left ul {
-                display: none;
-            }
-
-            .navbar-email {
-                display: none;
+            
+            .product-info{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
             }
         }
+
 </style>
 </head>
 <body>
-    <nav>
-        <img src="../source/icons/icon_menu.svg" alt="menu" class="menu">
+   <aside class="product-detail">
+    <div class="product-detail-close">
+        <img src="/./source/icons/icon_close.png" alt="close">
+    </div>
+    
+    <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Bici">
+   
+    <div class="product-info">
+        <p>#35.00</p>
+        <p>Bike</p>
+        <p>With its functional and practical interior, trhis refrigerator also fulfils a decorative
+            function, adding personality and a retro-vintage aesthetic to your kitchen or workplace.
+        </p>
 
-        <div class="navbar-left">
-            <img src="../source/logos/logo_yard_sale.svg" alt="logo" class="logo">
-
-            <ul>
-                <li><a href="/">All</a></li>
-                <li><a href="/">Clothes</a></li>
-                <li><a href="/">Electronics</a></li>
-                <li><a href="/">Fornitures</a></li>
-                <li><a href="/">Toys</a></li>
-                <li><a href="/">Others</a></li>
-            </ul>
-        </div>
-
-        <div class="navbar-rigth">
-            <ul>
-                <li class="navbar-email">oscarleon@dirlatam.com
-                    <img src="../source/icons/flechita.svg" alt="">
-                </li>
-                <li class="navbar-shopping-cart">
-                    <img src="../source/icons/icon_shopping_cart.svg" alt="">
-                    <div>2</div>
-                </li>
-            </ul>
-        </div>
-
-    </nav>
+        <button class="primary-button add-to-cart-button">
+            <img src="/./source/icons/bt_add_to_cart.svg" alt="add">
+            Add to cart
+        </button>
+    </div>
+</aside>
 </body>
 </html>
