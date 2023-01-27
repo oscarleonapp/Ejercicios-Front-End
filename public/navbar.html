@@ -25,11 +25,110 @@
             font-family: 'Quicksand', sans-serif;
         }
 
+        .product-detail{
+            width: 360px;
+            padding: 24px;
+            position: absolute;
+            right: 0;
+
+        }
+
+        .product-detail-close{
+            background-color: #F7F7F7;
+            position: absolute;
+           top: 24px;
+           left: 24px;
+            width: 12px;
+            height: 12px;
+            z-index: 2;
+            padding: 5px;
+            border-radius: 50%;
+           
+        }
+
+        .product-detail-close:hover{
+            cursor: pointer;
+        }
+
+        .product-detail > img:nth-child(2){
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            border-radius:  0 0 20px 20px;
+
+        }
+
+        .product-info{
+            margin: 24px 24px 0 24px;
+        }
+
+        .product-info p:nth-child(1){
+            font-weight: bold;
+            font-size: var(--md);
+            margin-top: 0;
+            margin-bottom: 4px;
+        }
+
+        .product-info p:nth-child(2){
+            color: var(--very-light-pink);
+            font-size: var(--md);
+            margin-top: 0;
+            margin-bottom: 36px;
+        }
+
+        .product-info p:nth-child(3){
+            color: var(--very-light-pink);
+            font-size: var(--sm);
+            margin-top: 0;
+            margin-bottom: 36px;
+        }
+        
+        .primary-button {
+            /*Visuales*/
+            background-color: var(--hospital-green);
+            border-radius: 4px;
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+
+            /*Box Model*/
+            width: 100%;
+            height: 32px;
+
+            /*Tipografia*/
+            font-size: var(--md);
+            font-weight: 500;
+        }
+
+        .add-to-cart-button{
+           display: flex;
+           align-items: center; 
+           justify-content: center;
+        }
+
+        @media (max-width: 640px){
+            .product-detail{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .product-info{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
 </style>
 </head>
 <body>
    <aside class="product-detail">
-    <img src="/./source/icons/icon_close.png" alt="close">
+    <div class="product-detail-close">
+        <img src="/./source/icons/icon_close.png" alt="close">
+    </div>
+    
     <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Bici">
    
     <div class="product-info">
@@ -38,6 +137,11 @@
         <p>With its functional and practical interior, trhis refrigerator also fulfils a decorative
             function, adding personality and a retro-vintage aesthetic to your kitchen or workplace.
         </p>
+
+        <button class="primary-button add-to-cart-button">
+            <img src="/./source/icons/bt_add_to_cart.svg" alt="add">
+            Add to cart
+        </button>
     </div>
 </aside>
 </body>
